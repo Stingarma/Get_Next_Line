@@ -6,10 +6,15 @@
 /*   By: lsaumon <lsaumon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 10:52:55 by lsaumon           #+#    #+#             */
-/*   Updated: 2023/10/27 10:55:05 by lsaumon          ###   ########.fr       */
+/*   Updated: 2023/10/28 15:06:57 by lsaumon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*get_next_line(int fd);
+
+
+char	*get_next_line(int fd)
+{
+	
+}
