@@ -6,16 +6,16 @@
 /*   By: lsaumon <lsaumon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 10:52:55 by lsaumon           #+#    #+#             */
-/*   Updated: 2023/10/28 17:16:33 by lsaumon          ###   ########.fr       */
+/*   Updated: 2023/10/28 17:23:26 by lsaumon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	ft_free(char *buffer, char *size)
+char	*ft_free(char *buffer, char *size)
 {
-	char *temp;
-	
+	char	*temp;
+
 	temp = ft_strjoin(buffer, size);
 	free(buffer);
 	return (temp);
@@ -23,8 +23,8 @@ char	ft_free(char *buffer, char *size)
 
 char	*ft_next(char *buffer)
 {
-	int	forward;
-	int	lateral;
+	int		forward;
+	int		lateral;
 	char	*line;
 
 	while (buffer[forward] && buffer[forward] != '\n')
@@ -48,7 +48,7 @@ char	*ft_newline(char *buffer)
 {
 	char	*line;
 	int		i;
-	
+
 	i = 0;
 	if (!buffer[i])
 		return (NULL);
@@ -76,20 +76,20 @@ char	*ft_read(int fd, char *result)
 
 	if (!result)
 		result = ft_calloc(1, 1);
-	buffer = ft_calloc(BUFF_SIZE + 1, sizeof(char));
+	buffer = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
 	one_read = 1;
 	while (one_read > 0)
 	{
-		one_read = read(fd, buffer, BUFF_SIZE);
+		one_read = read(fd, buffer, BUFFER_SIZE);
 		if (one_read == -1)
 		{
 			free(buffer);
 			return (NULL);
 		}
 		buffer[one_read] = 0;
-		result = ft_free(result, '\n');
-		if (ft_strchr(buffer, '\n'))
-			break;
+		result = ft_free(result, "\n");
+		if (ft_strchr(buffer, "\n"))
+			break ;
 	}
 	free(buffer);
 	return (result);
