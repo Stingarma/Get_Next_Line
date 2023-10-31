@@ -6,7 +6,7 @@
 /*   By: lsaumon <lsaumon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 10:53:17 by lsaumon           #+#    #+#             */
-/*   Updated: 2023/10/28 16:37:36 by lsaumon          ###   ########.fr       */
+/*   Updated: 2023/10/31 19:05:02 by lsaumon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ char	*ft_strjoin(const char *s1, const char *s2)
 		return (NULL);
 	while (s1[len_s1])
 	{
-		result = s1[len_s1];
+		result[len_s1] = s1[len_s1];
 		len_s1++;
 	}
 	len_s2 = 0;

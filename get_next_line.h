@@ -6,12 +6,15 @@
 /*   By: lsaumon <lsaumon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 10:52:38 by lsaumon           #+#    #+#             */
-/*   Updated: 2023/10/28 17:17:10 by lsaumon          ###   ########.fr       */
+/*   Updated: 2023/10/31 17:56:34 by lsaumon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1
+# endif
 
 # include <stdlib.h>
 # include <stdio.h>
