@@ -6,7 +6,7 @@
 /*   By: lsaumon <lsaumon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 10:53:17 by lsaumon           #+#    #+#             */
-/*   Updated: 2023/10/31 19:05:02 by lsaumon          ###   ########.fr       */
+/*   Updated: 2023/10/31 20:18:40 by lsaumon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ size_t	ft_strlen(const char *s)
 	int	i;
 
 	i = 0;
+	if (!s[i])
+		return (0);
 	while (s[i])
 		i++;
 	return (i);
@@ -27,6 +29,8 @@ void	*ft_memset(void *s, int c, size_t n)
 	size_t	i;
 
 	i = 0;
+	if (!s)
+		return (NULL);
 	while (i < n)
 	{
 		((unsigned char *) s)[i] = c;
@@ -40,6 +44,8 @@ char	*ft_strchr(const char *s, int c)
 	int	i;
 
 	i = 0;
+	if (!s[i])
+		return (NULL);
 	while (s[i] != (unsigned char)c)
 	{
 		if (s[i] == '\0')

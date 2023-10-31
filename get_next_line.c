@@ -6,7 +6,7 @@
 /*   By: lsaumon <lsaumon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 10:52:55 by lsaumon           #+#    #+#             */
-/*   Updated: 2023/10/31 19:35:41 by lsaumon          ###   ########.fr       */
+/*   Updated: 2023/10/31 20:02:09 by lsaumon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ char	*ft_next(char *buffer)
 		return (NULL);
 	}
 	line = ft_calloc((ft_strlen(buffer) - forward + 1), sizeof(char));
+	if (!line)
+		return (NULL);
 	forward++;
 	lateral = 0;
 	while (buffer[forward])
@@ -59,6 +61,8 @@ char	*ft_newline(char *buffer)
 	while (buffer[index] && buffer[index] != '\n')
 		index++;
 	line = ft_calloc(index + 2, sizeof(char));
+	if (!line)
+		return (NULL);
 	index = 0;
 	while (buffer[index] && buffer[index] != '\n')
 	{
