@@ -6,7 +6,7 @@
 /*   By: lsaumon <lsaumon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 10:53:17 by lsaumon           #+#    #+#             */
-/*   Updated: 2023/11/01 11:36:48 by lsaumon          ###   ########.fr       */
+/*   Updated: 2023/11/01 13:41:34 by lsaumon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ size_t	ft_strlen(const char *s)
 	int	i;
 
 	i = 0;
-	if (!s[i])
-		return (0);
 	while (s[i])
 		i++;
 	return (i);
