@@ -6,7 +6,7 @@
 /*   By: lsaumon <lsaumon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 10:52:55 by lsaumon           #+#    #+#             */
-/*   Updated: 2023/10/31 20:02:09 by lsaumon          ###   ########.fr       */
+/*   Updated: 2023/11/01 11:46:00 by lsaumon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_free(char *buffer, char *size)
 char	*ft_next(char *buffer)
 {
 	int		forward;
-	int		lateral;
+	int		cpy;
 	char	*line;
 
 	forward = 0;
@@ -39,11 +39,11 @@ char	*ft_next(char *buffer)
 	if (!line)
 		return (NULL);
 	forward++;
-	lateral = 0;
+	cpy = 0;
 	while (buffer[forward])
 	{
-		line[lateral] = buffer[forward];
-		lateral++;
+		line[cpy] = buffer[forward];
+		cpy++;
 		forward++;
 	}
 	free(buffer);
