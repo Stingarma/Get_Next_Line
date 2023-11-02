@@ -6,12 +6,12 @@
 /*   By: lsaumon <lsaumon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 08:46:45 by lsaumon           #+#    #+#             */
-/*   Updated: 2023/11/02 08:46:47 by lsaumon          ###   ########.fr       */
+/*   Updated: 2023/11/02 10:26:14 by lsaumon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 10
 # endif
