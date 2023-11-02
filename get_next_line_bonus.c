@@ -6,7 +6,7 @@
 /*   By: lsaumon <lsaumon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 08:43:16 by lsaumon           #+#    #+#             */
-/*   Updated: 2023/11/02 08:53:45 by lsaumon          ###   ########.fr       */
+/*   Updated: 2023/11/02 10:33:36 by lsaumon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,3 @@ char	*get_next_line(int fd)
 	ft_update_line_and_buffer(&line, buffer[fd]);
 	return (line);
 }
-
-
-
