@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lsaumon <lsaumon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/27 10:52:55 by lsaumon           #+#    #+#             */
-/*   Updated: 2023/11/02 08:51:42 by lsaumon          ###   ########.fr       */
+/*   Created: 2023/11/02 08:43:16 by lsaumon           #+#    #+#             */
+/*   Updated: 2023/11/02 08:53:45 by lsaumon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*ft_strchr(const char *str, int c)
 {
@@ -82,21 +82,23 @@ int	ft_check(int br, char **line)
 
 char	*get_next_line(int fd)
 {
-	static char		buffer[BUFFER_SIZE + 1];
+	static char		buffer[1024][BUFFER_SIZE + 1];
 	char			*line;
 	int				br;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (fd < 0 || fd >= 1024 || BUFFER_SIZE <= 0)
 		return (NULL);
 	line = NULL;
-	if (buffer[0] != '\0')
-		line = ft_strjoin(NULL, buffer);
-	ft_read(fd, &line, buffer, &br);
+	if (buffer[fd][0] != '\0')
+		line = ft_strjoin(NULL, buffer[fd]);
+	ft_read(fd, &line, buffer[fd], &br);
 	if (!ft_check(br, &line))
 		return (NULL);
 	if (br <= 0)
 		return (line);
-	ft_update_line_and_buffer(&line, buffer);
+	ft_update_line_and_buffer(&line, buffer[fd]);
 	return (line);
 }
+
+
 
